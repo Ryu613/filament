@@ -165,7 +165,7 @@ VkResult VulkanPlatformSurfaceSwapChain::create() {
     if (maxImageCount != 0 && desiredImageCount > maxImageCount) {
         FVK_LOGE << "Swap chain does not support " << desiredImageCount << " images."
                       << utils::io::endl;
-        desiredImageCount = caps.minImageCount;
+        desiredImageCount = caps.maxImageCount;
     }
 
     // Find a suitable surface format.
